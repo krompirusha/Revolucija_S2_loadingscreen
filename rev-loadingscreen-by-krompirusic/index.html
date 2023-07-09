@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>revolucija_loadingscreen</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="revolucija_loadingscreen" content="revolucija_loadingscreen, initial-scale=1"><link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <div id="particles-js">
+      <audio id="loading" autoplay loop>
+        <source src="music/loading.m4a" type="audio/m4a">
+      </audio>
+    </div>
+    <div class="wrapper">
+      <div class="box-wrap">
+          <div class="box one"></div>
+          <div class="box two"></div>
+          <div class="box three"></div>   
+          <div class="box four"></div>
+          <div class="box five"></div>
+          <div class="box six"></div>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        var play = false;
+        var myAudio = document.getElementById("loading");
+    
+        myAudio.volume = 0.2;
+
+        function onKeyDown(event) {
+          switch (event.keyCode) {
+            case 32: //SpaceBar                    
+              if (play) {
+                myAudio.pause();
+                play = false;
+              } else {
+                myAudio.play();
+                play = true;
+              }
+              break;
+          }
+          return false;
+        }
+        window.addEventListener("keydown", onKeyDown, false);
+      </script>
+    </div>
+  </body>
+
+</html>
